@@ -29,6 +29,14 @@ namespace AutoPasteCNet.src.UHFReader
         {
             tk = new TKHelper();
             keyboard = new Keyboard();
+            InitDisplay();
+        }
+
+        public void InitDisplay()
+        {
+            Console.WriteLine("=====================");
+            Console.WriteLine("Auto Paste UHF Reader");
+            Console.WriteLine("=====================");
         }
 
         // automatically detected COM UHF Reader
@@ -54,7 +62,8 @@ namespace AutoPasteCNet.src.UHFReader
             if ((fOpenComIndex != -1) & (openresult != 0X35) & (openresult != 0X30))
             {
                 string openedCOM = "COM" + Convert.ToString(fOpenComIndex);
-                Console.WriteLine("Successfuly Open " + openedCOM);
+                Console.WriteLine("\nSuccessfuly Open " + openedCOM);
+                Console.WriteLine("Running ...\n");
                 ComOpen = true;
             }
             if ((fOpenComIndex == -1) && (openresult == 0x30))
