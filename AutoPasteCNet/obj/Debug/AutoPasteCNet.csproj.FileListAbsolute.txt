@@ -1,0 +1,9 @@
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\bin\Debug\AutoPasteCNet.exe.config
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\bin\Debug\AutoPasteCNet.exe
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\bin\Debug\AutoPasteCNet.pdb
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\obj\Debug\AutoPasteCNet.csprojAssemblyReference.cache
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\obj\Debug\AutoPasteCNet.csproj.CoreCompileInputs.cache
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\obj\Debug\AutoPasteCNet.exe
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\obj\Debug\AutoPasteCNet.pdb
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\bin\Debug\UHFReader09CSharp.dll
+D:\Kantor\C#\AutoPasteCNet\AutoPasteCNet\obj\Debug\AutoPasteCNet.csproj.CopyComplete
