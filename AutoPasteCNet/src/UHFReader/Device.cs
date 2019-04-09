@@ -112,16 +112,17 @@ namespace AutoPasteCNet.src.UHFReader
             if ((fCmdRet == 1) | (fCmdRet == 2) | (fCmdRet == 3) | (fCmdRet == 4) | (fCmdRet == 0xFB))
             {
                 byte[] daw = new byte[Totallen];
+                //Console.WriteLine(daw);
                 Array.Copy(EPC, daw, Totallen);
                 temps = ByteArrayToHexString(daw);
                 fInventory_EPC_List = temps;
                 m = 0;
+                //Console.WriteLine("Card Num : " + CardNum);
                 if (CardNum == 0)
                 {
                     fIsInventoryScan = false;
                     return;
-                }
-                for (CardIndex = 0; CardIndex < CardNum; CardIndex++)
+                } else
                 {
                     EPClen = daw[m];
                     sEPC = temps.Substring(m * 2 + 2, EPClen * 2);
@@ -132,7 +133,7 @@ namespace AutoPasteCNet.src.UHFReader
 
                     // auto copy-paste feature
                     keyboard.AutoCopyPasteEvent(EPC_Card);
-                }
+                }                
             }
             fIsInventoryScan = false;
         }

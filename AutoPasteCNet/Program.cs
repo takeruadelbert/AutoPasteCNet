@@ -9,7 +9,6 @@ using AutoPasteCNet.src.UHFReader;
 
 namespace AutoPasteCNet
 {
-
     class Program
     {
         [STAThread]

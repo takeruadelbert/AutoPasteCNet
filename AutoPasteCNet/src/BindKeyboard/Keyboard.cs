@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace AutoPasteCNet.src.BindKeyboard
 {
@@ -26,16 +28,13 @@ namespace AutoPasteCNet.src.BindKeyboard
         public const int VK_LCONTROL = 0xA2; //Left Control key code
         public const int V = 0x56; //V key code
 
+        [STAThread]
         public void AutoCopyPasteEvent(String text)
         {
             try
             {
                 // Copy to Clipboard
-                OpenClipboard(IntPtr.Zero);
-                var ptr = Marshal.StringToHGlobalUni(text);
-                SetClipboardData(13, ptr); 
-                CloseClipboard();
-                Marshal.FreeHGlobal(ptr);
+                Clipboard.SetText(text);
 
                 // Hold Control down and press V
                 keybd_event(VK_LCONTROL, 0, KEYEVENTF_EXTENDEDKEY, 0);
