@@ -33,7 +33,7 @@ namespace AutoPasteCNet.src.BindKeyboard
                 // Copy to Clipboard
                 OpenClipboard(IntPtr.Zero);
                 var ptr = Marshal.StringToHGlobalUni(text);
-                SetClipboardData(13, ptr);
+                SetClipboardData(13, ptr); 
                 CloseClipboard();
                 Marshal.FreeHGlobal(ptr);
 
@@ -41,7 +41,7 @@ namespace AutoPasteCNet.src.BindKeyboard
                 keybd_event(VK_LCONTROL, 0, KEYEVENTF_EXTENDEDKEY, 0);
                 keybd_event(V, 0, KEYEVENTF_EXTENDEDKEY, 0);
                 keybd_event(V, 0, KEYEVENTF_KEYUP, 0);
-                
+
                 // unbind the control key + v flags
                 keybd_event(V, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
                 keybd_event(VK_LCONTROL, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
@@ -50,6 +50,15 @@ namespace AutoPasteCNet.src.BindKeyboard
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public static void ClearClipboard()
+        {
+            OpenClipboard(IntPtr.Zero);
+            var ptr = Marshal.StringToHGlobalUni("");
+            SetClipboardData(13, ptr);
+            CloseClipboard();
+            Marshal.FreeHGlobal(ptr);
         }
     }
 }

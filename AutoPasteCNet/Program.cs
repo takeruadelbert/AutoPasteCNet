@@ -15,16 +15,20 @@ namespace AutoPasteCNet
         [STAThread]
         static void Main(string[] args)
         {
-            //Keyboard keyboard = new Keyboard();
-            //keyboard.AutoCopyPasteEvent("Takeru Adelbert");
             Device device = new Device();
-            device.OpenPort();
-            while(true)
+            try
             {
-                device.Inventory();
-                System.Threading.Thread.Sleep(3000); // 3 seconds
+                device.OpenPort();
+                for (; ; )
+                {
+                    device.Inventory();
+                    System.Threading.Thread.Sleep(3000); // 3 seconds
+                }
             }
-            //device.ClosePort();
+            catch (Exception ex)
+            {
+                device.ClosePort();
+            }
         }
     }
 }
