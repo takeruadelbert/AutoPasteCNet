@@ -129,6 +129,9 @@ namespace AutoPasteCNet.src.UHFReader
 
                     // Show UID Card
                     string EPC_Card = tk.ConvertEPCHexToNumber(sEPC);
+                    Console.WriteLine("\n=========================");
+                    Console.WriteLine(tk.GetCurrentDatetime());
+                    Console.WriteLine("=========================");
                     Console.WriteLine("UID : " + EPC_Card);
 
                     // auto copy-paste feature

@@ -24,5 +24,10 @@ namespace AutoPasteCNet.src.Helper
             }
             return "";
         }
+
+        public string GetCurrentDatetime()
+        {
+            return DateTime.Now.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID")) + " " + DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }
